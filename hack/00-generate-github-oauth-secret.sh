@@ -4,7 +4,7 @@ set -x
 
 export HUB_BASEDOMAIN=$(oc cluster-info | grep running | cut -d':' -f2 | sed 's|//api.||g')
 
-cat > github-oauth-secret.yaml <<EOF
+cat > 01-github-oauth-secret.yaml <<EOF
 apiVersion: v1
 kind: Secret
 stringData:
