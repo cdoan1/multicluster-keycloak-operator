@@ -25,4 +25,7 @@ testbin/*
 *.swo
 *~
 
+*.pem
+hack/0*.yaml
+
 .*
