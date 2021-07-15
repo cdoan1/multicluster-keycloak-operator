@@ -13,6 +13,27 @@ Currently, a work-in-progress.
 
 ## Getting Started
 
+### On Prem - Bare Metal
+
+* Added RHSSO manifests into `hack`
+
+```bash=
+oc apply -f hack/rhsso-operator.yaml
+oc apply -f hack/rhsso-instance.yaml
+```
+
+* RHSSO deploys postgresql, so requires PVC, so ensure default storage class
+
+```bash=
+(base) ➜  multicluster-keycloak-operator git:(main) ✗ oc get pods -n keycloak
+NAME                                   READY   STATUS    RESTARTS   AGE
+keycloak-0                             1/1     Running   1          4m11s
+keycloak-postgresql-64475bf6cb-2m4vn   1/1     Running   0          4m11s
+rhsso-operator-5bf95d9df-8dnkh         1/1     Running   0          48m
+```
+
+------
+
 1. Install the Red Hat Single Sign-On Operator from the OpenShift Operator Catalog.
 ```
 apiVersion: operators.coreos.com/v1alpha1
