@@ -40,7 +40,7 @@ if [ ! -f console-crt.encoded.pem ]; then
 fi
 
 cat > 02-hub-ca-trust-cert.yaml <<EOF
-apiVersion:
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ca-config-map
